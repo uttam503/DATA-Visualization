@@ -1,0 +1,627 @@
+[
+  {
+    "name": "Arjun Mehta",
+    "roll": "2024-001",
+    "subjects": {
+      "Mathematics": 88,
+      "Science": 92,
+      "English": 76,
+      "History": 81,
+      "Computer Science": 95
+    },
+    "monthlyPerformance": [
+      72,
+      75,
+      78,
+      80,
+      82,
+      85,
+      83,
+      86,
+      88,
+      90,
+      87,
+      89
+    ]
+  },
+  {
+    "name": "Priya Sharma",
+    "roll": "2024-002",
+    "subjects": {
+      "Mathematics": 95,
+      "Science": 89,
+      "English": 91,
+      "History": 78,
+      "Computer Science": 90
+    },
+    "monthlyPerformance": [
+      80,
+      82,
+      84,
+      86,
+      85,
+      88,
+      90,
+      89,
+      91,
+      92,
+      93,
+      94
+    ]
+  },
+  {
+    "name": "Rahul Verma",
+    "roll": "2024-003",
+    "subjects": {
+      "Mathematics": 62,
+      "Science": 58,
+      "English": 71,
+      "History": 65,
+      "Computer Science": 70
+    },
+    "monthlyPerformance": [
+      55,
+      58,
+      60,
+      59,
+      62,
+      64,
+      63,
+      66,
+      65,
+      67,
+      68,
+      65
+    ]
+  },
+  {
+    "name": "Sneha Kulkarni",
+    "roll": "2024-004",
+    "subjects": {
+      "Mathematics": 91,
+      "Science": 94,
+      "English": 88,
+      "History": 85,
+      "Computer Science": 97
+    },
+    "monthlyPerformance": [
+      82,
+      84,
+      86,
+      88,
+      90,
+      89,
+      91,
+      93,
+      92,
+      94,
+      95,
+      93
+    ]
+  },
+  {
+    "name": "Vikram Singh",
+    "roll": "2024-005",
+    "subjects": {
+      "Mathematics": 45,
+      "Science": 38,
+      "English": 52,
+      "History": 48,
+      "Computer Science": 55
+    },
+    "monthlyPerformance": [
+      38,
+      40,
+      42,
+      41,
+      44,
+      45,
+      43,
+      47,
+      46,
+      48,
+      50,
+      48
+    ]
+  },
+  {
+    "name": "Ananya Reddy",
+    "roll": "2024-006",
+    "subjects": {
+      "Mathematics": 78,
+      "Science": 82,
+      "English": 90,
+      "History": 88,
+      "Computer Science": 76
+    },
+    "monthlyPerformance": [
+      70,
+      72,
+      74,
+      76,
+      78,
+      80,
+      79,
+      82,
+      83,
+      84,
+      82,
+      83
+    ]
+  },
+  {
+    "name": "Karthik Nair",
+    "roll": "2024-007",
+    "subjects": {
+      "Mathematics": 83,
+      "Science": 79,
+      "English": 65,
+      "History": 72,
+      "Computer Science": 88
+    },
+    "monthlyPerformance": [
+      68,
+      70,
+      72,
+      74,
+      75,
+      77,
+      78,
+      80,
+      79,
+      81,
+      82,
+      81
+    ]
+  },
+  {
+    "name": "Meera Joshi",
+    "roll": "2024-008",
+    "subjects": {
+      "Mathematics": 32,
+      "Science": 28,
+      "English": 45,
+      "History": 40,
+      "Computer Science": 35
+    },
+    "monthlyPerformance": [
+      25,
+      28,
+      30,
+      29,
+      32,
+      33,
+      31,
+      34,
+      33,
+      35,
+      36,
+      34
+    ]
+  },
+  {
+    "name": "Aditya Gupta",
+    "roll": "2024-009",
+    "subjects": {
+      "Mathematics": 74,
+      "Science": 71,
+      "English": 68,
+      "History": 75,
+      "Computer Science": 80
+    },
+    "monthlyPerformance": [
+      60,
+      62,
+      64,
+      66,
+      68,
+      70,
+      69,
+      72,
+      73,
+      74,
+      73,
+      74
+    ]
+  },
+  {
+    "name": "Ishita Patel",
+    "roll": "2024-010",
+    "subjects": {
+      "Mathematics": 96,
+      "Science": 98,
+      "English": 93,
+      "History": 90,
+      "Computer Science": 99
+    },
+    "monthlyPerformance": [
+      88,
+      90,
+      91,
+      93,
+      94,
+      95,
+      94,
+      96,
+      97,
+      98,
+      97,
+      97
+    ]
+  },
+  {
+    "name": "Rohan Das",
+    "roll": "2024-011",
+    "subjects": {
+      "Mathematics": 55,
+      "Science": 60,
+      "English": 48,
+      "History": 52,
+      "Computer Science": 58
+    },
+    "monthlyPerformance": [
+      42,
+      45,
+      47,
+      49,
+      50,
+      52,
+      51,
+      54,
+      53,
+      55,
+      56,
+      55
+    ]
+  },
+  {
+    "name": "Divya Iyer",
+    "roll": "2024-012",
+    "subjects": {
+      "Mathematics": 87,
+      "Science": 85,
+      "English": 82,
+      "History": 79,
+      "Computer Science": 91
+    },
+    "monthlyPerformance": [
+      74,
+      76,
+      78,
+      80,
+      81,
+      83,
+      82,
+      85,
+      86,
+      87,
+      86,
+      86
+    ]
+  },
+  {
+    "name": "Aman Tiwari",
+    "roll": "2024-013",
+    "subjects": {
+      "Mathematics": 68,
+      "Science": 72,
+      "English": 60,
+      "History": 64,
+      "Computer Science": 70
+    },
+    "monthlyPerformance": [
+      55,
+      57,
+      59,
+      61,
+      63,
+      65,
+      64,
+      67,
+      66,
+      68,
+      69,
+      68
+    ]
+  },
+  {
+    "name": "Kavya Menon",
+    "roll": "2024-014",
+    "subjects": {
+      "Mathematics": 92,
+      "Science": 90,
+      "English": 95,
+      "History": 87,
+      "Computer Science": 93
+    },
+    "monthlyPerformance": [
+      82,
+      84,
+      86,
+      88,
+      89,
+      91,
+      90,
+      92,
+      93,
+      91,
+      92,
+      92
+    ]
+  },
+  {
+    "name": "Suresh Kumar",
+    "roll": "2024-015",
+    "subjects": {
+      "Mathematics": 40,
+      "Science": 35,
+      "English": 50,
+      "History": 42,
+      "Computer Science": 38
+    },
+    "monthlyPerformance": [
+      30,
+      33,
+      35,
+      34,
+      37,
+      38,
+      36,
+      39,
+      38,
+      40,
+      41,
+      39
+    ]
+  },
+  {
+    "name": "Nisha Agarwal",
+    "roll": "2024-016",
+    "subjects": {
+      "Mathematics": 80,
+      "Science": 77,
+      "English": 85,
+      "History": 82,
+      "Computer Science": 84
+    },
+    "monthlyPerformance": [
+      68,
+      70,
+      72,
+      74,
+      76,
+      78,
+      77,
+      79,
+      80,
+      81,
+      80,
+      81
+    ]
+  },
+  {
+    "name": "Deepak Choudhary",
+    "roll": "2024-017",
+    "subjects": {
+      "Mathematics": 58,
+      "Science": 55,
+      "English": 62,
+      "History": 58,
+      "Computer Science": 63
+    },
+    "monthlyPerformance": [
+      45,
+      47,
+      49,
+      51,
+      53,
+      55,
+      54,
+      57,
+      56,
+      58,
+      59,
+      58
+    ]
+  },
+  {
+    "name": "Pooja Ranganathan",
+    "roll": "2024-018",
+    "subjects": {
+      "Mathematics": 89,
+      "Science": 93,
+      "English": 86,
+      "History": 84,
+      "Computer Science": 96
+    },
+    "monthlyPerformance": [
+      78,
+      80,
+      82,
+      84,
+      85,
+      87,
+      86,
+      89,
+      90,
+      91,
+      90,
+      90
+    ]
+  },
+  {
+    "name": "Harsh Kapoor",
+    "roll": "2024-019",
+    "subjects": {
+      "Mathematics": 72,
+      "Science": 68,
+      "English": 74,
+      "History": 70,
+      "Computer Science": 75
+    },
+    "monthlyPerformance": [
+      58,
+      60,
+      62,
+      64,
+      66,
+      68,
+      67,
+      70,
+      71,
+      72,
+      71,
+      72
+    ]
+  },
+  {
+    "name": "Tanvi Deshmukh",
+    "roll": "2024-020",
+    "subjects": {
+      "Mathematics": 85,
+      "Science": 88,
+      "English": 92,
+      "History": 86,
+      "Computer Science": 89
+    },
+    "monthlyPerformance": [
+      74,
+      76,
+      78,
+      80,
+      82,
+      83,
+      82,
+      85,
+      86,
+      87,
+      86,
+      86
+    ]
+  },
+  {
+    "name": "Manish Yadav",
+    "roll": "2024-021",
+    "subjects": {
+      "Mathematics": 48,
+      "Science": 42,
+      "English": 55,
+      "History": 50,
+      "Computer Science": 46
+    },
+    "monthlyPerformance": [
+      35,
+      38,
+      40,
+      39,
+      42,
+      44,
+      43,
+      46,
+      45,
+      47,
+      48,
+      46
+    ]
+  },
+  {
+    "name": "Shruti Bhatt",
+    "roll": "2024-022",
+    "subjects": {
+      "Mathematics": 93,
+      "Science": 91,
+      "English": 89,
+      "History": 92,
+      "Computer Science": 94
+    },
+    "monthlyPerformance": [
+      83,
+      85,
+      87,
+      88,
+      90,
+      91,
+      90,
+      92,
+      93,
+      92,
+      93,
+      93
+    ]
+  },
+  {
+    "name": "Nikhil Pandey",
+    "roll": "2024-023",
+    "subjects": {
+      "Mathematics": 66,
+      "Science": 70,
+      "English": 58,
+      "History": 63,
+      "Computer Science": 72
+    },
+    "monthlyPerformance": [
+      52,
+      54,
+      56,
+      58,
+      60,
+      62,
+      61,
+      64,
+      65,
+      66,
+      65,
+      66
+    ]
+  },
+  {
+    "name": "Ritu Saxena",
+    "roll": "2024-024",
+    "subjects": {
+      "Mathematics": 81,
+      "Science": 84,
+      "English": 78,
+      "History": 80,
+      "Computer Science": 86
+    },
+    "monthlyPerformance": [
+      68,
+      70,
+      72,
+      74,
+      76,
+      78,
+      77,
+      80,
+      81,
+      82,
+      81,
+      82
+    ]
+  },
+  {
+    "name": "Sanjay Mishra",
+    "roll": "2024-025",
+    "subjects": {
+      "Mathematics": 36,
+      "Science": 30,
+      "English": 42,
+      "History": 38,
+      "Computer Science": 32
+    },
+    "monthlyPerformance": [
+      22,
+      25,
+      28,
+      27,
+      30,
+      32,
+      30,
+      33,
+      32,
+      34,
+      35,
+      33
+    ]
+  }
+]

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acadex — Student Performance Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-mark">A</div>
+            <span class="brand-name">Acadex</span>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-label">Main</div>
+            <a class="nav-item active" data-page="overview">
+                <i class="fa-solid fa-border-all"></i><span>Overview</span>
+            </a>
+            <a class="nav-item" data-page="students">
+                <i class="fa-solid fa-user-group"></i><span>Students</span>
+            </a>
+            <a class="nav-item" data-page="subjects">
+                <i class="fa-solid fa-book-open"></i><span>Subjects</span>
+            </a>
+            <a class="nav-item" data-page="reports">
+                <i class="fa-solid fa-chart-column"></i><span>Reports</span>
+            </a>
+            <div class="nav-label">System</div>
+            <a class="nav-item" data-page="settings">
+                <i class="fa-solid fa-sliders"></i><span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-user">
+                <div class="user-av">UP</div>
+                <div>
+                    <div class="user-name">Uttam Prajapati</div>
+                    <div class="user-role">Administrator</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main -->
+    <div class="main-wrap">
+        <!-- Topbar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle sidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div>
+                    <div class="breadcrumb">
+                        <span>Dashboard</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span class="current" id="breadcrumbCurrent">Overview</span>
+                    </div>
+                    <h1 class="page-title" id="pageTitle">Performance Overview</h1>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="tb-search" id="tbSearch">
+                    <i class="fa-solid fa-magnifying-glass s-icon"></i>
+                    <input type="text" id="globalSearch" placeholder="Search students..." autocomplete="off" />
+                    <kbd class="s-kbd">/</kbd>
+                    <button class="s-clear" id="searchClear" aria-label="Clear"><i
+                            class="fa-solid fa-xmark"></i></button>
+                    <div class="s-drop" id="searchDrop">
+                        <div class="s-drop-head" id="searchDropHead"></div>
+                        <div class="s-drop-list" id="searchDropList"></div>
+                    </div>
+                </div>
+                <div class="topbar-sep"></div>
+                <button class="topbar-icon" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notif-dot"></span>
+                </button>
+                <div class="topbar-sep"></div>
+                <span class="topbar-badge">Class X-A</span>
+            </div>
+        </header>
+
+        <!-- Pages -->
+        <main class="content">
+
+            <!-- ===== OVERVIEW ===== -->
+            <div class="page active" id="page-overview">
+                <section class="metrics" aria-label="Key metrics">
+                    <div class="m-card">
+                        <div class="m-head"><span class="m-label">Total Students</span><span class="m-icon"><i
+                                    class="fa-solid fa-users"></i></span></div>
+                        <div class="m-body"><span class="m-val" id="oTotal">0</span></div>
+                        <div class="m-foot"><span class="m-sub">Enrolled this year</span></div>
+                    </div>
+                    <div class="m-card">
+                        <div class="m-head"><span class="m-label">Passed</span><span class="m-icon ic-s"><i
+                                    class="fa-solid fa-circle-check"></i></span></div>
+                        <div class="m-body"><span class="m-val" id="oPassed">0</span><span class="m-trend"
+                                id="oPassedT"></span></div>
+                        <div class="m-foot">
+                            <div class="m-bar">
+                                <div class="m-bar-fill success" id="oPassBar"></div>
+                            </div><span class="m-sub" id="oPassPct"></span>
+                        </div>
+                    </div>
+                    <div class="m-card">
+                        <div class="m-head"><span class="m-label">Failed</span><span class="m-icon ic-d"><i
+                                    class="fa-solid fa-circle-xmark"></i></span></div>
+                        <div class="m-body"><span class="m-val" id="oFailed">0</span><span class="m-trend"
+                                id="oFailedT"></span></div>
+                        <div class="m-foot">
+                            <div class="m-bar">
+                                <div class="m-bar-fill danger" id="oFailBar"></div>
+                            </div><span class="m-sub" id="oFailPct"></span>
+                        </div>
+                    </div>
+                    <div class="m-card">
+                        <div class="m-head"><span class="m-label">Class Average</span><span class="m-icon ic-w"><i
+                                    class="fa-solid fa-chart-line"></i></span></div>
+                        <div class="m-body"><span class="m-val" id="oAvg">0</span><span class="m-trend"
+                                id="oAvgT"></span></div>
+                        <div class="m-foot"><span class="m-sub">Out of 100</span></div>
+                    </div>
+                </section>
+
+                <section class="charts-grid">
+                    <div class="chart-panel full">
+                        <div class="p-head">
+                            <div>
+                                <h2 class="p-title">Subject Performance</h2>
+                                <p class="p-desc">Average marks by subject</p>
+                            </div><span class="p-chip">5 Subjects</span>
+                        </div>
+                        <div class="p-chart"><canvas id="cBar"></canvas></div>
+                    </div>
+                    <div class="chart-panel wide">
+                        <div class="p-head">
+                            <div>
+                                <h2 class="p-title">Monthly Trend</h2>
+                                <p class="p-desc">Class average over 12 months</p>
+                            </div><span class="p-chip">Jan – Dec</span>
+                        </div>
+                        <div class="p-chart"><canvas id="cLine"></canvas></div>
+                    </div>
+                    <div class="chart-panel narrow">
+                        <div class="p-head">
+                            <div>
+                                <h2 class="p-title">Pass / Fail</h2>
+                                <p class="p-desc">Result distribution</p>
+                            </div>
+                        </div>
+                        <div class="p-chart center"><canvas id="cDoughnut"></canvas></div>
+                    </div>
+                    <div class="chart-panel narrow">
+                        <div class="p-head">
+                            <div>
+                                <h2 class="p-title">Strengths</h2>
+                                <p class="p-desc">Subject profile</p>
+                            </div>
+                        </div>
+                        <div class="p-chart center"><canvas id="cRadar"></canvas></div>
+                    </div>
+                    <div class="chart-panel wide">
+                        <div class="p-head">
+                            <div>
+                                <h2 class="p-title">Grade Distribution</h2>
+                                <p class="p-desc">Students per grade bracket</p>
+                            </div><span class="p-chip">All Subjects</span>
+                        </div>
+                        <div class="p-chart"><canvas id="cHBar"></canvas></div>
+                    </div>
+                </section>
+
+                <section class="table-section">
+                    <div class="table-panel">
+                        <div class="p-head">
+                            <div>
+                                <h2 class="p-title">Top Performers</h2>
+                                <p class="p-desc">Ranked by aggregate</p>
+                            </div><span class="p-chip">Top 10</span>
+                        </div>
+                        <div class="t-scroll">
+                            <table class="dtable">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Student</th>
+                                        <th>Roll</th>
+                                        <th>Math</th>
+                                        <th>Sci</th>
+                                        <th>Eng</th>
+                                        <th>His</th>
+                                        <th>CS</th>
+                                        <th style="text-align:right">Total</th>
+                                        <th style="text-align:right">%</th>
+                                        <th style="text-align:center">Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="oTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ===== STUDENTS ===== -->
+            <div class="page" id="page-students">
+                <div class="students-layout">
+                    <div class="stu-list-panel">
+                        <div class="stu-list-head">
+                            <div class="stu-list-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="stuFilter" placeholder="Filter students..." />
+                            </div>
+                            <span class="stu-count" id="stuCount"></span>
+                        </div>
+                        <div class="stu-list" id="stuList"></div>
+                    </div>
+                    <div class="stu-detail-panel" id="stuDetail">
+                        <div class="stu-detail-empty">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <p>Select a student to view details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SUBJECTS ===== -->
+            <div class="page" id="page-subjects">
+                <div class="subj-grid" id="subjGrid"></div>
+            </div>
+
+            <!-- ===== REPORTS ===== -->
+            <div class="page" id="page-reports">
+                <div class="report-layout">
+                    <div class="report-select-panel">
+                        <h2 class="p-title" style="margin-bottom:14px">Generate Report Card</h2>
+                        <div class="report-select-wrap">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="reportSearch" placeholder="Type student name or roll..." />
+                            <div class="report-results" id="reportResults"></div>
+                        </div>
+                    </div>
+                    <div class="report-card-panel" id="reportCard">
+                        <div class="stu-detail-empty">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <p>Select a student to generate report</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SETTINGS ===== -->
+            <div class="page" id="page-settings">
+                <div class="settings-wrap">
+                    <div class="setting-group">
+                        <h2 class="p-title" style="margin-bottom:4px">Appearance</h2>
+                        <p class="p-desc" style="margin-bottom:18px">Customize how the dashboard looks</p>
+                        <div class="setting-row">
+                            <div>
+                                <div class="setting-label">Theme Mode</div>
+                                <div class="setting-desc">Switch between dark and light appearance</div>
+                            </div>
+                            <div class="theme-toggle" id="themeToggle">
+                                <div class="theme-opt active" data-val="dark">
+                                    <i class="fa-solid fa-moon"></i> Dark
+                                </div>
+                                <div class="theme-opt" data-val="light">
+                                    <i class="fa-solid fa-sun"></i> Light
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting-group">
+                        <h2 class="p-title" style="margin-bottom:4px">Data</h2>
+                        <p class="p-desc" style="margin-bottom:18px">Information about the current dataset</p>
+                        <div class="setting-row">
+                            <div>
+                                <div class="setting-label">Total Records</div>
+                                <div class="setting-desc" id="settingRecords">—</div>
+                            </div>
+                            <span class="p-chip">Live</span>
+                        </div>
+                        <div class="setting-row">
+                            <div>
+                                <div class="setting-label">Academic Year</div>
+                                <div class="setting-desc">2024 – 2025</div>
+                            </div>
+                            <span class="p-chip">Class X-A</span>
+                        </div>
+                        <div class="setting-row">
+                            <div>
+                                <div class="setting-label">Passing Marks</div>
+                                <div class="setting-desc">35 per subject (out of 100)</div>
+                            </div>
+                            <span class="p-chip">Fixed</span>
+                        </div>
+                    </div>
+                    <div class="setting-group">
+                        <h2 class="p-title" style="margin-bottom:4px">About</h2>
+                        <p class="p-desc" style="margin-bottom:18px">Dashboard information</p>
+                        <div class="setting-row">
+                            <div>
+                                <div class="setting-label">Version</div>
+                                <div class="setting-desc">2.4.0</div>
+                            </div>
+                        </div>
+                        <div class="setting-row">
+                            <div>
+                                <div class="setting-label">Built with</div>
+                                <div class="setting-desc">Chart.js, Plus Jakarta Sans, Font Awesome</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="app-footer">
+            <span>Acadex v2.4</span><span class="f-sep">·</span><span>2024–25</span><span
+                class="f-sep">·</span><span>Class X-A</span>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
